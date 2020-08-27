@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    
+    [SerializeField]
+    private TextMeshProUGUI scoreText;
     public static int score = 0;
 
     void Start()
@@ -14,6 +16,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(score);
+        scoreText.text = score.ToString();
     }
 }
