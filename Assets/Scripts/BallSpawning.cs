@@ -5,9 +5,9 @@ using UnityEngine;
 public class BallSpawning : MonoBehaviour
 {
     [SerializeField]
-    private float timeToStartSpawning = 1.5f;
+    private float timeToStartSpawning = 4f;
     [SerializeField]
-    private float timeBetweenSpawns = 1f;
+    private float timeBetweenSpawns = 3f;
 
     private float tempTime;
 
@@ -26,12 +26,18 @@ public class BallSpawning : MonoBehaviour
         if(tempTime <= 0)
         {
             tempTime = timeBetweenSpawns;
+            SpawnBall();
         }
     }
 
     void SpawnBall()
     {
-        timeBetweenSpawns += Random.Range(-0.4f, 0.2f);
+        if (timeBetweenSpawns > 1f) { ReduceTimeSpawn(); }
         Instantiate(ball, gameObject.transform.position, Quaternion.identity);
+    }
+
+   void ReduceTimeSpawn()
+    {
+        timeBetweenSpawns += Random.Range(-0.4f, 0.2f);
     }
 }

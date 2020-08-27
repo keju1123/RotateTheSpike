@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Circle
+  - MTPoint
+  - Spike
   layers:
   - Default
   - TransparentFX

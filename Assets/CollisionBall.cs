@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionBall : MonoBehaviour
 {
@@ -22,6 +23,11 @@ public class CollisionBall : MonoBehaviour
         {
             GameManager.score++;
             DestroyMe();
+        }
+        if (collision.collider.tag.Equals("Spike"))
+        {
+            GameManager.score = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
