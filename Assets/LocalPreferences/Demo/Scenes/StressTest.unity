@@ -237,7 +237,7 @@ MonoBehaviour:
   randomTime: 2
   stressTestFileName: PrefsStressTest
   encrypt: 1
-  testPlayerPrefs: 0
+  testPlayerPrefs: 1
   localPrefs: []
   playerPrefs: []
 --- !u!4 &772724012

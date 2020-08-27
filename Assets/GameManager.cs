@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int score = 0;
+    
+    public static int score = 0;
+
     void Start()
     {
         
@@ -12,6 +14,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+        Debug.Log(score);
     }
 }
