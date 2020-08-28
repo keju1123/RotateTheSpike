@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class CollisionBall : MonoBehaviour
 {
+    public GemSpawning gemSpawning;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gemSpawning = GameObject.FindGameObjectWithTag("Spawner").GetComponent<GemSpawning>();
     }
 
     // Update is called once per frame
@@ -22,6 +23,7 @@ public class CollisionBall : MonoBehaviour
         if(collision.collider.tag.Equals("Circle"))
         {
             GameManager.score++;
+            gemSpawning.SpawnGem();
             DestroyMe();
         }
         if (collision.collider.tag.Equals("Spike"))
