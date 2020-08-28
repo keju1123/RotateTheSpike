@@ -12,6 +12,10 @@ public class BallSpawning : MonoBehaviour
     private float tempTime;
 
 
+    [SerializeField]
+    private float TransitionTime = 1f;
+
+
     public GameObject ball;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +30,10 @@ public class BallSpawning : MonoBehaviour
         if(tempTime <= 0)
         {
             tempTime = timeBetweenSpawns;
+            if(GameManager.score % 5 == 0)
+            {
+                Invoke("SpawnBall", TransitionTime);
+            }
             SpawnBall();
         }
     }
@@ -38,6 +46,6 @@ public class BallSpawning : MonoBehaviour
 
    void ReduceTimeSpawn()
     {
-        timeBetweenSpawns += Random.Range(-0.4f, 0.2f);
+        timeBetweenSpawns += Random.Range(-0.3f, 0.2f);
     }
 }

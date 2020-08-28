@@ -14,12 +14,16 @@ public class ColorManager : MonoBehaviour
     private GameObject spikeObj;
     [SerializeField]
     private SpriteRenderer ball;
+    [SerializeField]
+    private ParticleSystem particle;
     //private GameObject ball;
 
 
     // Start is called before the first frame update
     void Awake()
     {
+        ParticleSystem.MainModule settings = particle.main;
+        settings.startColor = ColorList.colorCollection["Color1"].ballColor;
         spike = spikeObj.GetComponentInChildren<SpriteRenderer>();
         mainCamera.backgroundColor = ColorList.colorCollection["Color1"].camAndSpikeColor;
         circle.color = ColorList.colorCollection["Color1"].circleColor;
