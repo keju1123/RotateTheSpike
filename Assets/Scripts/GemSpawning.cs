@@ -11,7 +11,6 @@ public class GemSpawning : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnPoints = GameObject.FindGameObjectsWithTag("MTPoint");
     }
 
     // Update is called once per frame

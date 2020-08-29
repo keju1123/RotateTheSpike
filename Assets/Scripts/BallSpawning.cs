@@ -40,12 +40,16 @@ public class BallSpawning : MonoBehaviour
 
     void SpawnBall()
     {
-        if (timeBetweenSpawns > 1f) { ReduceTimeSpawn(); }
+        if (timeBetweenSpawns >= 1.1f) { ReduceTimeSpawn(); } else { AddTimeSpawn(); }
         Instantiate(ball, gameObject.transform.position, Quaternion.identity);
     }
 
    void ReduceTimeSpawn()
     {
         timeBetweenSpawns += Random.Range(-0.3f, 0.2f);
+    }
+    void AddTimeSpawn()
+    {
+        timeBetweenSpawns += Random.Range(0.1f, 0.3f);
     }
 }
