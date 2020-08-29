@@ -1011,6 +1011,8 @@ MonoBehaviour:
     type: 3}
   ball: {fileID: 9119228564851013018, guid: 40526578270a8b74db0237e350865162, type: 3}
   particle: {fileID: 1159273500}
+  ballTrail: {fileID: 4113068470887459671, guid: 40526578270a8b74db0237e350865162,
+    type: 3}
 --- !u!4 &288638441
 Transform:
   m_ObjectHideFlags: 0
@@ -1494,7 +1496,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1612,7 +1614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -818, y: -52}
+  m_AnchoredPosition: {x: -934, y: -52}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &538606939
@@ -1813,7 +1815,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -6571,9 +6573,10 @@ GameObject:
   m_Component:
   - component: {fileID: 667331557}
   - component: {fileID: 667331558}
+  - component: {fileID: 667331559}
   m_Layer: 0
   m_Name: Catcher (1)
-  m_TagString: Untagged
+  m_TagString: Catcher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6631,7 +6634,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 60c5c043a728ae4489345ed4c09b8f47, type: 3}
   m_Color: {r: 0.8705883, g: 0.9176471, b: 0.96470594, a: 1}
   m_FlipX: 0
@@ -6643,6 +6646,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &667331559
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667331556}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.50627995
 --- !u!1 &692205538
 GameObject:
   m_ObjectHideFlags: 0
@@ -6656,7 +6675,7 @@ GameObject:
   - component: {fileID: 692205540}
   m_Layer: 5
   m_Name: GemText
-  m_TagString: Untagged
+  m_TagString: GemText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6677,8 +6696,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -930, y: -52}
-  m_SizeDelta: {x: 336.2, y: 100}
+  m_AnchoredPosition: {x: -373.00012, y: -59.619873}
+  m_SizeDelta: {x: 539, y: 92.4}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &692205540
 MonoBehaviour:
@@ -6698,7 +6717,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: '0
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 50bc2a65f3726c3488a8f21afb0c4d73, type: 2}
   m_sharedMaterial: {fileID: -8540956657222117101, guid: 50bc2a65f3726c3488a8f21afb0c4d73,
@@ -6734,7 +6755,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 1028
+  m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -6768,9 +6789,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 692205540}
-    characterCount: 3
+    characterCount: 2
     spriteCount: 0
-    spaceCount: 0
+    spaceCount: 1
     wordCount: 1
     linkCount: 0
     lineCount: 1
@@ -7384,9 +7405,10 @@ GameObject:
   m_Component:
   - component: {fileID: 896718107}
   - component: {fileID: 896718108}
+  - component: {fileID: 896718109}
   m_Layer: 0
   m_Name: Catcher
-  m_TagString: Untagged
+  m_TagString: Catcher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7444,7 +7466,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 60c5c043a728ae4489345ed4c09b8f47, type: 3}
   m_Color: {r: 0.8705883, g: 0.9176471, b: 0.96470594, a: 1}
   m_FlipX: 0
@@ -7456,6 +7478,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &896718109
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896718106}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5049357
 --- !u!1 &898407164
 GameObject:
   m_ObjectHideFlags: 0
@@ -14499,7 +14537,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0

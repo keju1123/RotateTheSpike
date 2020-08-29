@@ -8,6 +8,8 @@ TagManager:
   - MTPoint
   - Spike
   - Spawner
+  - Catcher
+  - GemText
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Spike
   - Circle
   - PostProcessing
-  - 
+  - Gems
   - 
   - 
   - 
