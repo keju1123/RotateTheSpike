@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveTowardsPoints: []
-  startSpeed: 10
+  startSpeed: 15
 --- !u!50 &7058594648142043642
 Rigidbody2D:
   serializedVersion: 4

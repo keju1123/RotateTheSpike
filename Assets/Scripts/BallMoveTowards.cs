@@ -14,7 +14,6 @@ public class BallMoveTowards : MonoBehaviour
         moveTowardsPoints = GameObject.FindGameObjectsWithTag("MTPoint");
         randnum = Random.Range(1, moveTowardsPoints.Length);
         startSpeed += GameManager.score / 3;
-        startSpeed += Random.Range(-3f, 3f);
         Debug.Log(startSpeed);
     }
 

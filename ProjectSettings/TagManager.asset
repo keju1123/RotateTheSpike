@@ -10,6 +10,7 @@ TagManager:
   - Spawner
   - Catcher
   - GemText
+  - CoinUI
   layers:
   - Default
   - TransparentFX
