@@ -46,8 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bd08cef24ff34242af381f925d2ba2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBeforeDisappear: 5
   particle: {fileID: 5063650362156648377, guid: d26d2d51a63e7f04a997dd11293a79c8,
     type: 3}
+  gemText: {fileID: 0}
+  CoinUI: {fileID: 0}
 --- !u!58 &2162827193343785760
 CircleCollider2D:
   m_ObjectHideFlags: 0
