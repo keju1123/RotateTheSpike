@@ -28,7 +28,9 @@ namespace ColorData
                 "Color2",
                 new ColorClass
                 {
-
+                    camAndSpikeColor = new Color32(27,98,191,255),
+                    circleColor = new Color32(99, 161, 242,255),
+                    ballColor = new Color32(244, 177, 132, 255),
                 }
             },
         };

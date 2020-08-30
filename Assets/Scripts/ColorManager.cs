@@ -24,12 +24,13 @@ public class ColorManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        string index = PlayerPrefs.GetString("Color", "Color1");
         ParticleSystem.MainModule settings = particle.main;
         spike = spikeObj.GetComponentInChildren<SpriteRenderer>();
-        mainCamera.backgroundColor = ColorList.colorCollection["Color1"].camAndSpikeColor;
-        circle.color = ColorList.colorCollection["Color1"].circleColor;
-        spike.color = ColorList.colorCollection["Color1"].camAndSpikeColor;
-        ball.color = ColorList.colorCollection["Color1"].ballColor;
+        mainCamera.backgroundColor = ColorList.colorCollection[index].camAndSpikeColor;
+        circle.color = ColorList.colorCollection[index].circleColor;
+        spike.color = ColorList.colorCollection[index].camAndSpikeColor;
+        ball.color = ColorList.colorCollection[index].ballColor;
         settings.startColor = ball.color;
         ballTrail.startColor = ball.color;
         ballTrail.endColor = new Color32(255, 255, 255, 128);
