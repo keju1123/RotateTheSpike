@@ -24,6 +24,17 @@ public class UIManager : MonoBehaviour
         StartCoroutine(PlayButton());
     }
 
+    public void onShareButton()
+    {
+        StartCoroutine(ShareTheGame());
+    }
+
+    IEnumerator ShareTheGame()
+    {
+        yield return new WaitForEndOfFrame();
+        new NativeShare().SetSubject("Compete with Me!").SetText("Play this game and see if you can beat my highscore! (Link Here)").Share();
+    }
+
     IEnumerator PlayButton()
     {
         panelAnim.SetTrigger("ClosePanel");

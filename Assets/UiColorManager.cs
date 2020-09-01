@@ -25,6 +25,8 @@ public class UiColorManager : MonoBehaviour
     [Header("Buttons")]
     [SerializeField]
     private Image ShareButton;
+    [SerializeField]
+    private Image ShareImage;
 
     // Start is called before the first frame update
     void Awake()
@@ -37,6 +39,15 @@ public class UiColorManager : MonoBehaviour
         PlayImage.color = ColorList.colorCollection[index].ImageColor;
         ShareButton.color = PlayImage.color;
 
+        byte Y = (byte)(0.2126 * 255 * PlayImage.color.r + 0.7152 * 255 * PlayImage.color.g + 0.0722 * 255 * PlayImage.color.b);
+        if(Y <128)
+        {
+            ShareImage.color = Color.white;
+        }
+        else
+        {
+            ShareImage.color = Color.black;
+        }
 
     }
 
