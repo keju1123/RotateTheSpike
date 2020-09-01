@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using ColorData;
 using UnityEngine.UI;
+using TMPro;
+using Random = UnityEngine.Random;
 
 public class UiColorManager : MonoBehaviour
 {
@@ -15,19 +17,27 @@ public class UiColorManager : MonoBehaviour
     private Image panel;
 
     [SerializeField]
-    private Animator panelAnim;
+    private Image PlayImage;
+
+
+
+
+    [Header("Buttons")]
+    [SerializeField]
+    private Image ShareButton;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         int randint = Random.Range(1, ColorList.colorCollection.Count + 1);
         string index = "Color" + randint.ToString();
         PlayerPrefs.SetString("Color", index);
         maincam.backgroundColor = ColorList.colorCollection[index].camAndSpikeColor;
         circle.color = ColorList.colorCollection[index].circleColor;
-        panel.color = maincam.backgroundColor;
+        PlayImage.color = ColorList.colorCollection[index].ImageColor;
+        ShareButton.color = PlayImage.color;
 
 
-        panelAnim.SetTrigger("OpenPanel");
     }
 
     // Update is called once per frame
