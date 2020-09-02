@@ -28,12 +28,13 @@ public class UiColorManager : MonoBehaviour
     [SerializeField]
     private Image ShareImage;
 
+    string index;
+
     // Start is called before the first frame update
     void Awake()
     {
         int randint = Random.Range(1, ColorList.colorCollection.Count + 1);
-        string index = "Color" + randint.ToString();
-        PlayerPrefs.SetString("Color", index);
+        index = "Color" + randint.ToString();
         maincam.backgroundColor = ColorList.colorCollection[index].camAndSpikeColor;
         circle.color = ColorList.colorCollection[index].circleColor;
         PlayImage.color = ColorList.colorCollection[index].ImageColor;
@@ -51,6 +52,10 @@ public class UiColorManager : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        PlayerPrefs.SetString("Color", index);
+    }
     // Update is called once per frame
     void Update()
     {

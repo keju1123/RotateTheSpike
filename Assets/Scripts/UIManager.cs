@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     private Animator panelAnim;
 
     string index;
-    private void Start()
+    private void Awake()
     {
         index = PlayerPrefs.GetString("Color", "Color1");
         panelImage.color = ColorList.colorCollection[index].camAndSpikeColor;
@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     public void onPlayButton()
     {
         index = PlayerPrefs.GetString("Color", "Color1");
+        panelImage.color = ColorList.colorCollection[index].camAndSpikeColor;
         StartCoroutine(PlayButton());
     }
 

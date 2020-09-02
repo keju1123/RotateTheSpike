@@ -29,7 +29,7 @@ public class CollisionBall : MonoBehaviour
         if (collision.collider.tag.Equals("Spike"))
         {
             GameManager.score = 0;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("GameOver");
         }
     }
 

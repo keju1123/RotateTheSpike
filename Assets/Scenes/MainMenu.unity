@@ -156,6 +156,7 @@ MonoBehaviour:
   panel: {fileID: 884958253}
   PlayImage: {fileID: 1556952881}
   ShareButton: {fileID: 371280684}
+  ShareImage: {fileID: 457635328}
 --- !u!4 &78329771
 Transform:
   m_ObjectHideFlags: 0
@@ -238,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 25, y: -25}
+  m_EffectDistance: {x: 13, y: -10}
   m_UseGraphicAlpha: 1
 --- !u!95 &371280682
 Animator:
@@ -713,13 +714,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1405959405}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 540, y: 960}
-  m_SizeDelta: {x: 1080, y: 1920}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &884958252
 Animator:
@@ -758,8 +759,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 0}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -869,6 +870,7 @@ RectTransform:
   - {fileID: 1974579519}
   - {fileID: 425947123}
   - {fileID: 371280680}
+  - {fileID: 884958251}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1014,7 +1016,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1740941697
 GameObject:
@@ -5777,7 +5779,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1974579518
 GameObject:
@@ -5814,7 +5816,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -285.5, y: 707.6}
+  m_SizeDelta: {x: -0.00012207, y: 707.6}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1974579520
 MonoBehaviour:
@@ -5836,8 +5838,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ROTATE THE SPIKES
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c7e0177ac3d30bd4b9db6522df4b7dba, type: 2}
-  m_sharedMaterial: {fileID: -6160229267404504403, guid: c7e0177ac3d30bd4b9db6522df4b7dba,
+  m_fontAsset: {fileID: 11400000, guid: 47d0472f79690254d97500089f9c78f0, type: 2}
+  m_sharedMaterial: {fileID: 12378434393072017, guid: 47d0472f79690254d97500089f9c78f0,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
