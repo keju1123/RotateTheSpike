@@ -1097,6 +1097,8 @@ MonoBehaviour:
     type: 3}
   catcher1: {fileID: 896718108}
   catcher2: {fileID: 667331558}
+  ballexplodeSmall: {fileID: 2467110081333492951, guid: 0c0275cb5f95d404e81acb57fa4ec63f,
+    type: 3}
 --- !u!4 &288638441
 Transform:
   m_ObjectHideFlags: 0

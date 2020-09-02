@@ -21,6 +21,8 @@ public class ColorManager : MonoBehaviour
     private SpriteRenderer catcher1;
     [SerializeField]
     private SpriteRenderer catcher2;
+    [SerializeField]
+    private ParticleSystem ballexplodeSmall;
     //private GameObject ball;
 
 
@@ -30,6 +32,7 @@ public class ColorManager : MonoBehaviour
         spikeObj = GameObject.FindGameObjectsWithTag("spikeobj");
         string index = PlayerPrefs.GetString("Color", "Color1");
         ParticleSystem.MainModule settings = particle.main;
+        ParticleSystem.MainModule expSmall = ballexplodeSmall.main;
         mainCamera.backgroundColor = ColorList.colorCollection[index].camAndSpikeColor;
 
         for(int i=0;i<spikeObj.Length;i++)
@@ -40,6 +43,7 @@ public class ColorManager : MonoBehaviour
 
         circle.color = ColorList.colorCollection[index].circleColor;
         ball.color = ColorList.colorCollection[index].ballColor;
+        expSmall.startColor = ball.color;
         settings.startColor = ball.color;
         ballTrail.startColor = ball.color;
         ballTrail.endColor = new Color32(255, 255, 255, 128);

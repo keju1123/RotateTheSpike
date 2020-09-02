@@ -16,13 +16,15 @@ public class UIGameoverColorManager : MonoBehaviour
     private Image replayImage;
     [SerializeField]
     private Image ShareImage;
+    [SerializeField]
+    private SpriteRenderer MiddleCircle;
     private void Awake()
     {
         string index = PlayerPrefs.GetString("Color", "Color1");
         mainCamera.backgroundColor = ColorList.colorCollection[index].camAndSpikeColor;
         circle.color = ColorList.colorCollection[index].ImageColor;
         ShareCircle.color = circle.color;
-
+        MiddleCircle.color = ColorList.colorCollection[index].circleColor;
         byte Y = (byte)(0.2126 * 255 * circle.color.r + 0.7152 * 255 * circle.color.g + 0.0722 * 255 * circle.color.b);
         if (Y < 128)
         {
