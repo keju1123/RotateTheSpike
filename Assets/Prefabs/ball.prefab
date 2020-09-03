@@ -117,6 +117,8 @@ MonoBehaviour:
   gemSpawning: {fileID: 0}
   ExplodeSmallParticle: {fileID: 2467110081333492949, guid: 0c0275cb5f95d404e81acb57fa4ec63f,
     type: 3}
+  bouncy: {fileID: 6200000, guid: 828f71fdab5197b459841ea269e9a466, type: 2}
+  panelAnim: {fileID: 0}
 --- !u!114 &8037227494320456849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +145,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0

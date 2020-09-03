@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameState;
 
 public class BallSpawning : MonoBehaviour
 {
@@ -26,16 +27,20 @@ public class BallSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tempTime -= Time.deltaTime;
-        if(tempTime <= 0)
+        if(!States.havelost)
         {
-            tempTime = timeBetweenSpawns;
-            if(GameManager.score % 5 == 0)
+            tempTime -= Time.deltaTime;
+            if (tempTime <= 0)
             {
-                Invoke("SpawnBall", TransitionTime);
+                tempTime = timeBetweenSpawns;
+                if (GameManager.score % 5 == 0)
+                {
+                    Invoke("SpawnBall", TransitionTime);
+                }
+                SpawnBall();
             }
-            SpawnBall();
         }
+
     }
 
     void SpawnBall()

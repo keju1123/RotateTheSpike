@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using GameState;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         spikes = GameObject.FindGameObjectsWithTag("Spike");
+        States.havelost = false;
 
     }
     private int savedScore = -1;

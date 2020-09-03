@@ -10,3 +10,11 @@ namespace ScoreData
         public static int currScore;
     }
 }
+
+namespace GameState
+{
+    public static class States
+    {
+        public static bool havelost;
+    }
+}
