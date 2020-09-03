@@ -11,6 +11,8 @@ using System.IO;
 public class GameOverUIManager : MonoBehaviour
 {
     [SerializeField]
+    private Camera mainCamera;
+    [SerializeField]
     private Image panelImage;
     [SerializeField]
     private Animator panelAnim;
@@ -19,9 +21,16 @@ public class GameOverUIManager : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI scoreText;
+    [SerializeField]
+    private TextMeshProUGUI highScoreText;
+    [SerializeField]
+    private GameObject ConfettiParticle;
     // Start is called before the first frame update
+
+    public int HighScore;
     private void Awake()
     {
+        HighScore = PlayerPrefs.GetInt("HighScore", 0);
         index = PlayerPrefs.GetString("Color", "Color1");
         panelImage.color = ColorList.colorCollection[index].camAndSpikeColor;
     }
@@ -29,6 +38,20 @@ public class GameOverUIManager : MonoBehaviour
     private void Start()
     {
         scoreText.text = Scores.currScore.ToString();
+        if(Scores.currScore > HighScore)
+        {
+            HighScore = Scores.currScore;
+            highScoreText.text = HighScore.ToString();
+            PlayerPrefs.SetInt("HighScore", Scores.currScore);
+            Vector3 confpos = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height/2,0)); 
+            Instantiate(ConfettiParticle,confpos, Quaternion.Euler(-97, 93, -90));
+            Vector3 confpos2 = mainCamera.ScreenToWorldPoint(new Vector3(0, Screen.height/2,0)); 
+            Instantiate(ConfettiParticle,confpos2, Quaternion.Euler(-80, 93, -90));
+        }
+        else
+        {
+            highScoreText.text = HighScore.ToString();
+        }
     }
     public void onMainButton()
     {
@@ -59,7 +82,7 @@ public class GameOverUIManager : MonoBehaviour
 
         Destroy(ss);
 
-        new NativeShare().AddFile(filePath)
+        new NativeShare().AddFile(filePath).SetSubject("Play this game!")
             .SetText("Come on!, Beat my score on this game!")
             .SetCallback((result, shareTarget) => Debug.Log("Share result: " + result + ", selected app: " + shareTarget))
             .Share();

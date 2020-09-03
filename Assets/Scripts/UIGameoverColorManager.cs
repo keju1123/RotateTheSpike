@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using ColorData;
+using TMPro;
 
 public class UIGameoverColorManager : MonoBehaviour
 {
@@ -17,7 +18,11 @@ public class UIGameoverColorManager : MonoBehaviour
     [SerializeField]
     private Image ShareImage;
     [SerializeField]
-    private SpriteRenderer MiddleCircle;
+    private Image MiddleCircle;
+    [SerializeField]
+    private TextMeshProUGUI scoreText;
+    [SerializeField]
+    private TextMeshProUGUI highscoreText;
     private void Awake()
     {
         string index = PlayerPrefs.GetString("Color", "Color1");
@@ -25,6 +30,8 @@ public class UIGameoverColorManager : MonoBehaviour
         circle.color = ColorList.colorCollection[index].ImageColor;
         ShareCircle.color = circle.color;
         MiddleCircle.color = ColorList.colorCollection[index].circleColor;
+        scoreText.color = circle.color;
+        highscoreText.color = circle.color;
         byte Y = (byte)(0.2126 * 255 * circle.color.r + 0.7152 * 255 * circle.color.g + 0.0722 * 255 * circle.color.b);
         if (Y < 128)
         {
