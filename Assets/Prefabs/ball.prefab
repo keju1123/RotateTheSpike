@@ -117,8 +117,9 @@ MonoBehaviour:
   gemSpawning: {fileID: 0}
   ExplodeSmallParticle: {fileID: 2467110081333492949, guid: 0c0275cb5f95d404e81acb57fa4ec63f,
     type: 3}
-  bouncy: {fileID: 6200000, guid: 828f71fdab5197b459841ea269e9a466, type: 2}
   panelAnim: {fileID: 0}
+  addtorqueamount: 100
+  bouncy: {fileID: 6200000, guid: abe7db40e872c9742a08d26497387788, type: 2}
 --- !u!114 &8037227494320456849
 MonoBehaviour:
   m_ObjectHideFlags: 0

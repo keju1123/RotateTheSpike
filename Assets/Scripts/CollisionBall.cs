@@ -10,11 +10,12 @@ public class CollisionBall : MonoBehaviour
 {
     public GemSpawning gemSpawning;
     public GameObject ExplodeSmallParticle;
-    public PhysicsMaterial2D bouncy;
     [SerializeField]
     private Animator panelAnim;
     private BallMoveTowards ballstatus;
     private Rigidbody2D myRB;
+    public float addtorqueamount;
+    public PhysicsMaterial2D bouncy;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,10 +47,7 @@ public class CollisionBall : MonoBehaviour
         {
             States.havelost = true;
             Scores.currScore = GameManager.score;
-            myRB.gravityScale = 1f;
-            myRB.AddForce(new Vector2(0, 10f), ForceMode2D.Impulse);
             myRB.sharedMaterial = bouncy;
-
             StartCoroutine(LoseGame());
         }
     }
@@ -61,7 +59,9 @@ public class CollisionBall : MonoBehaviour
 
     IEnumerator LoseGame()
     {
-        
+        //myRB.sharedMaterial.bounciness = 2f;
+        myRB.AddTorque(addtorqueamount);
+        myRB.AddForce(new Vector2(0,160), ForceMode2D.Impulse);
         yield return new WaitForSecondsRealtime(2f);
         panelAnim.SetTrigger("ClosePanel");
         yield return new WaitForSecondsRealtime(0.5f);

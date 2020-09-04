@@ -12,6 +12,7 @@ TagManager:
   - GemText
   - CoinUI
   - spikeobj
+  - panel
   layers:
   - Default
   - TransparentFX
