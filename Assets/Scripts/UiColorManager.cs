@@ -27,6 +27,10 @@ public class UiColorManager : MonoBehaviour
     private Image ShareButton;
     [SerializeField]
     private Image ShareImage;
+    [SerializeField]
+    private Image ShopButton;
+    [SerializeField]
+    private Image ShopImage;
 
     string index;
 
@@ -39,15 +43,18 @@ public class UiColorManager : MonoBehaviour
         circle.color = ColorList.colorCollection[index].circleColor;
         PlayImage.color = ColorList.colorCollection[index].ImageColor;
         ShareButton.color = PlayImage.color;
+        ShopButton.color = PlayImage.color;
 
         byte Y = (byte)(0.2126 * 255 * PlayImage.color.r + 0.7152 * 255 * PlayImage.color.g + 0.0722 * 255 * PlayImage.color.b);
         if(Y <128)
         {
             ShareImage.color = Color.white;
+            ShopImage.color = Color.white;
         }
         else
         {
             ShareImage.color = Color.black;
+            ShopImage.color = Color.black;
         }
 
     }

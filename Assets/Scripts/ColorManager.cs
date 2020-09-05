@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ColorData;
+using GameState;
 
 public class ColorManager : MonoBehaviour
 {
@@ -51,9 +52,5 @@ public class ColorManager : MonoBehaviour
         catcher2.color = circle.color;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

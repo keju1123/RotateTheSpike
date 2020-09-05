@@ -59,10 +59,10 @@ public class CollisionBall : MonoBehaviour
 
     IEnumerator LoseGame()
     {
-        //myRB.sharedMaterial.bounciness = 2f;
+        LeanTween.color(gameObject, Color.black, 0.5f);
         myRB.AddTorque(addtorqueamount);
         myRB.AddForce(new Vector2(0,160), ForceMode2D.Impulse);
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(1.5f);
         panelAnim.SetTrigger("ClosePanel");
         yield return new WaitForSecondsRealtime(0.5f);
         GameManager.score = 0;

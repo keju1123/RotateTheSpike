@@ -27,8 +27,6 @@ public class BallSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!States.havelost)
-        {
             tempTime -= Time.deltaTime;
             if (tempTime <= 0)
             {
@@ -39,14 +37,17 @@ public class BallSpawning : MonoBehaviour
                 }
                 SpawnBall();
             }
-        }
 
     }
 
     void SpawnBall()
     {
-        if (timeBetweenSpawns >= 1.1f) { ReduceTimeSpawn(); } else { AddTimeSpawn(); }
-        Instantiate(ball, gameObject.transform.position, Quaternion.identity);
+        if(!States.havelost)
+        {
+            if (timeBetweenSpawns >= 1.1f) { ReduceTimeSpawn(); } else { AddTimeSpawn(); }
+            Instantiate(ball, gameObject.transform.position, Quaternion.identity);
+        }
+
     }
 
    void ReduceTimeSpawn()
