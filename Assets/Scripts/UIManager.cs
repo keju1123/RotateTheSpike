@@ -29,7 +29,10 @@ public class UIManager : MonoBehaviour
     {
         StartCoroutine(ShareTheGame());
     }
-
+    public void onShopButton()
+    {
+        SSTools.ShowMessage("Coming soon", SSTools.Position.bottom, SSTools.Time.twoSecond);
+    }
     IEnumerator ShareTheGame()
     {
         yield return new WaitForEndOfFrame();

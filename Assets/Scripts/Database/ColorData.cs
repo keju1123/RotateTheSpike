@@ -45,7 +45,28 @@ namespace ColorData
                     ballColor = new Color32(102, 203, 254, 255),
                     ImageColor = new Color32(255,255,255, 255),
                 }
-            }
+            },
+            {
+                "Color4",
+                new ColorClass
+                {
+                    camAndSpikeColor = new Color32(254, 189, 159, 255),
+                    circleColor = new Color32(255, 219, 210, 255),
+                    ballColor = new Color32(172, 96, 254, 255),
+                    ImageColor = new Color32(172, 96, 254, 255),
+                }
+            },
+            {
+                "Color5",
+                new ColorClass
+                {
+                    camAndSpikeColor = new Color32(124, 124, 124, 255),
+                    circleColor = new Color32(229,217,184, 255),
+                    ballColor = new Color32(143, 171, 219, 255),
+                    ImageColor = new Color32(0,0,0,255),
+                }
+            },
+
         };
     }
 }
